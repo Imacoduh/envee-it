@@ -1,5 +1,5 @@
 import {
-  PageListHeader,
+  TagPageListHeader,
   useTagMetas,
   VirtualizedPageList,
 } from '@affine/core/components/page-list';
@@ -51,7 +51,12 @@ export const TagDetail = ({ tagId }: { tagId?: string }) => {
           ) : (
             <EmptyPageList
               type="all"
-              heading={<PageListHeader />}
+              heading={
+                <TagPageListHeader
+                  tag={currentTag}
+                  workspaceId={currentWorkspace.id}
+                />
+              }
               blockSuiteWorkspace={currentWorkspace.blockSuiteWorkspace}
             />
           )}

@@ -14,9 +14,9 @@ const TagListTitleCell = ({
 }: Pick<TagListItemProps, 'title' | 'pageCount'>) => {
   const t = useAFFiNEI18N();
   return (
-    <div data-testid="page-list-item-title" className={styles.titleCell}>
+    <div data-testid="tag-list-item-title" className={styles.titleCell}>
       <div
-        data-testid="page-list-item-title-text"
+        data-testid="tag-list-item-title-text"
         className={styles.titleCellMain}
       >
         {title || t['Untitled']()}
@@ -140,7 +140,7 @@ export const TagListItem = (props: TagListItemProps) => {
       {props.operations ? (
         <ColWrapper
           className={styles.actionsCellWrapper}
-          flex={1}
+          flex={2}
           alignment="end"
         >
           <TagListOperationsCell operations={props.operations} />

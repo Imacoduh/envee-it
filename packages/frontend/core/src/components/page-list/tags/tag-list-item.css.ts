@@ -119,7 +119,7 @@ export const titleCellPreview = style({
   overflow: 'hidden',
   color: cssVar('textSecondaryColor'),
   fontSize: cssVar('fontBase'),
-  flex: 1,
+  flexShrink: 0,
   whiteSpace: 'nowrap',
   textOverflow: 'ellipsis',
   alignSelf: 'stretch',
