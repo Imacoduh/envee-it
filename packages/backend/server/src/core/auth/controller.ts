@@ -19,6 +19,7 @@ import {
   URLHelper,
 } from '../../fundamentals';
 import { UserService } from '../user';
+import { validators } from '../utils/validators';
 import { CurrentUser } from './current-user';
 import { Public } from './guard';
 import { AuthService, parseAuthUserSeqNum } from './service';
@@ -48,6 +49,7 @@ export class AuthController {
     @Body() credential: SignInCredential,
     @Query('redirect_uri') redirectUri = this.url.home
   ) {
+    validators.assertValidEmail(credential.email);
     const canSignIn = await this.auth.canSignIn(credential.email);
     if (!canSignIn) {
       throw new PaymentRequiredException(
@@ -56,6 +58,7 @@ export class AuthController {
     }
 
     if (credential.password) {
+      validators.assertValidPassword(credential.password);
       const user = await this.auth.signIn(
         credential.email,
         credential.password
@@ -139,6 +142,7 @@ export class AuthController {
     }
 
     email = decodeURIComponent(email);
+    validators.assertValidEmail(email);
 
     const valid = await this.token.verifyToken(TokenType.SignIn, token, {
       credential: email,

@@ -26,9 +26,11 @@ export async function signUp(
           `,
     })
     .expect(200);
+
   if (autoVerifyEmail) {
     await setEmailVerified(app, email);
   }
+
   return res.body.data.signUp;
 }
 

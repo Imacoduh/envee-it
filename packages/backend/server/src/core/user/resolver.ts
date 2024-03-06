@@ -20,7 +20,7 @@ import {
 } from '../../fundamentals';
 import { CurrentUser } from '../auth/current-user';
 import { Public } from '../auth/guard';
-import { sessionUser } from '../auth/session';
+import { sessionUser } from '../auth/service';
 import { FeatureManagementService } from '../features';
 import { QuotaService } from '../quota';
 import { AvatarStorage } from '../storage';
@@ -63,9 +63,9 @@ export class UserResolver {
   })
   @Public()
   async user(
-    @CurrentUser() currentUser?: UserType,
+    @CurrentUser() currentUser?: CurrentUser,
     @Args('email') email?: string
-  ) {
+  ): Promise<typeof UserOrLimitedUser | null> {
     if (!email || !(await this.feature.canEarlyAccess(email))) {
       throw new PaymentRequiredException(
         `You don't have early access permission\nVisit https://community.affine.pro/c/insider-general/ for more information`
@@ -73,11 +73,14 @@ export class UserResolver {
     }
 
     // TODO: need to limit a user can only get another user witch is in the same workspace
-    const user = await this.users.findUserByEmail(email);
-    if (currentUser) return user;
+    const user = await this.users.findUserWithHashedPasswordByEmail(email);
 
     // return empty response when user not exists
     if (!user) return null;
+
+    if (currentUser) {
+      return sessionUser(user);
+    }
 
     // only return limited info when not logged in
     return {

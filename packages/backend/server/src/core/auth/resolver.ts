@@ -18,6 +18,7 @@ import type { Request, Response } from 'express';
 
 import { CloudThrottlerGuard, Config, Throttle } from '../../fundamentals';
 import { UserType } from '../user/types';
+import { validators } from '../utils/validators';
 import { CurrentUser } from './current-user';
 import { Public } from './guard';
 import { AuthService } from './service';
@@ -77,7 +78,7 @@ export class AuthResolver {
     deprecationReason: 'use [/api/auth/authorize]',
   })
   async clientToken(
-    @CurrentUser() currentUser: UserType,
+    @CurrentUser() currentUser: CurrentUser,
     @Parent() user: UserType
   ): Promise<ClientTokenType> {
     if (user.id !== currentUser.id) {
@@ -111,6 +112,7 @@ export class AuthResolver {
     @Args('email') email: string,
     @Args('password') password: string
   ) {
+    validators.assertValidCredential({ email, password });
     const user = await this.auth.signUp(name, email, password);
     await this.auth.setCookie(ctx.req, ctx.res, user);
     ctx.req.user = user;
@@ -130,6 +132,7 @@ export class AuthResolver {
     @Args('email') email: string,
     @Args('password') password: string
   ) {
+    validators.assertValidCredential({ email, password });
     const user = await this.auth.signIn(email, password);
     await this.auth.setCookie(ctx.req, ctx.res, user);
     ctx.req.user = user;
@@ -148,6 +151,8 @@ export class AuthResolver {
     @Args('token') token: string,
     @Args('newPassword') newPassword: string
   ) {
+    validators.assertValidPassword(newPassword);
+    // NOTE: Set & Change password are using the same token type.
     const valid = await this.token.verifyToken(
       TokenType.ChangePassword,
       token,
@@ -177,6 +182,7 @@ export class AuthResolver {
     @Args('token') token: string,
     @Args('email') email: string
   ) {
+    validators.assertValidEmail(email);
     // @see [sendChangeEmail]
     const valid = await this.token.verifyToken(TokenType.VerifyEmail, token, {
       credential: user.id,
@@ -243,7 +249,10 @@ export class AuthResolver {
       throw new ForbiddenException('Please verify your email first.');
     }
 
-    const token = await this.token.createToken(TokenType.SetPassword, user.id);
+    const token = await this.token.createToken(
+      TokenType.ChangePassword,
+      user.id
+    );
 
     const url = new URL(callbackUrl, this.config.baseUrl);
     url.searchParams.set('token', token);
@@ -301,6 +310,7 @@ export class AuthResolver {
     @Args('email') email: string,
     @Args('callbackUrl') callbackUrl: string
   ) {
+    validators.assertValidEmail(email);
     const valid = await this.token.verifyToken(TokenType.ChangeEmail, token, {
       credential: user.id,
     });

@@ -12,7 +12,6 @@ import {
 import { CloudThrottlerGuard, Throttle } from '../../fundamentals';
 import { CurrentUser } from '../auth';
 import { FeatureManagementService, FeatureType } from '../features';
-import { UserType } from '../user';
 import { PermissionService } from './permission';
 import { WorkspaceType } from './types';
 
@@ -32,7 +31,7 @@ export class WorkspaceManagementResolver {
   })
   @Mutation(() => Int)
   async addWorkspaceFeature(
-    @CurrentUser() currentUser: UserType,
+    @CurrentUser() currentUser: CurrentUser,
     @Args('workspaceId') workspaceId: string,
     @Args('feature', { type: () => FeatureType }) feature: FeatureType
   ): Promise<number> {
@@ -51,7 +50,7 @@ export class WorkspaceManagementResolver {
   })
   @Mutation(() => Int)
   async removeWorkspaceFeature(
-    @CurrentUser() currentUser: UserType,
+    @CurrentUser() currentUser: CurrentUser,
     @Args('workspaceId') workspaceId: string,
     @Args('feature', { type: () => FeatureType }) feature: FeatureType
   ): Promise<boolean> {

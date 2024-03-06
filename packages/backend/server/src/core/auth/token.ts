@@ -7,7 +7,6 @@ export enum TokenType {
   SignIn,
   VerifyEmail,
   ChangeEmail,
-  SetPassword,
   ChangePassword,
   Challenge,
 }

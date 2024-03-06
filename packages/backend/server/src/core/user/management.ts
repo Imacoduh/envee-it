@@ -31,7 +31,7 @@ export class UserManagementResolver {
   })
   @Mutation(() => Int)
   async addToEarlyAccess(
-    @CurrentUser() currentUser: UserType,
+    @CurrentUser() currentUser: CurrentUser,
     @Args('email') email: string
   ): Promise<number> {
     if (!this.feature.isStaff(currentUser.email)) {
@@ -54,7 +54,7 @@ export class UserManagementResolver {
   })
   @Mutation(() => Int)
   async removeEarlyAccess(
-    @CurrentUser() currentUser: UserType,
+    @CurrentUser() currentUser: CurrentUser,
     @Args('email') email: string
   ): Promise<number> {
     if (!this.feature.isStaff(currentUser.email)) {

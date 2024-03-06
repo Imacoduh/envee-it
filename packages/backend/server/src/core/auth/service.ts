@@ -9,7 +9,6 @@ import { hash, verify } from '@node-rs/argon2';
 import { PrismaClient, type User } from '@prisma/client';
 import type { CookieOptions, Request, Response } from 'express';
 import { assign, omit } from 'lodash-es';
-import z from 'zod';
 
 import { Config, MailService } from '../../fundamentals';
 import { FeatureManagementService } from '../features/management';
@@ -37,30 +36,6 @@ export function sessionUser(user: User): CurrentUser {
     hasPassword: user.password !== null,
     emailVerified: user.emailVerifiedAt !== null,
   });
-}
-
-const credentialValidator = {
-  email: z.string().email(),
-  password: z.string().min(8).max(32),
-};
-
-export function isValidEmail(email: string) {
-  return credentialValidator.email.safeParse(email).success;
-}
-
-export function isValidPassword(password: string) {
-  return credentialValidator.password.safeParse(password).success;
-}
-
-export function assertValidCredential(credential: {
-  email: string;
-  password: string;
-}) {
-  const { success } = z.object(credentialValidator).safeParse(credential);
-
-  if (!success) {
-    throw new BadRequestException('Invalid credential');
-  }
 }
 
 @Injectable()
@@ -92,10 +67,6 @@ export class AuthService implements OnApplicationBootstrap {
   }
 
   canSignIn(email: string) {
-    if (!isValidEmail(email)) {
-      throw new BadRequestException('Invalid email');
-    }
-
     return this.feature.canEarlyAccess(email);
   }
 
@@ -104,8 +75,6 @@ export class AuthService implements OnApplicationBootstrap {
     email: string,
     password: string
   ): Promise<CurrentUser> {
-    assertValidCredential({ email, password });
-
     const user = await this.getUserByEmail(email);
 
     if (user) {
@@ -124,8 +93,6 @@ export class AuthService implements OnApplicationBootstrap {
   }
 
   async signIn(email: string, password: string) {
-    assertValidCredential({ email, password });
-
     const user = await this.user.findUserWithHashedPasswordByEmail(email);
 
     if (!user) {

@@ -1,4 +1,4 @@
-import { Type, ValidationPipe } from '@nestjs/common';
+import { Type } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import type { NestExpressApplication } from '@nestjs/platform-express';
 import cookieParser from 'cookie-parser';
@@ -29,7 +29,6 @@ export async function createApp() {
   );
 
   app.useGlobalFilters(new GlobalExceptionFilter(app.getHttpAdapter()));
-  app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
 
   if (AFFiNE.flavor.sync) {
