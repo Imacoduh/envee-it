@@ -33,7 +33,7 @@ __metadata:
     "@affine-test/fixtures": "workspace:*"
     "@affine-test/kit": "workspace:*"
     "@playwright/test": "npm:^1.41.2"
-    express: "npm:^4.18.2"
+    express: "npm:^4.19.2"
     http-proxy-middleware: "npm:^3.0.0-beta.1"
     serve: "npm:^14.2.1"
   languageName: unknown
@@ -46,7 +46,7 @@ __metadata:
     "@affine-test/fixtures": "workspace:*"
     "@affine-test/kit": "workspace:*"
     "@playwright/test": "npm:^1.41.2"
-    express: "npm:^4.18.2"
+    express: "npm:^4.19.2"
     http-proxy-middleware: "npm:^3.0.0-beta.1"
     serve: "npm:^14.2.1"
   languageName: unknown
@@ -59,7 +59,7 @@ __metadata:
     "@affine-test/fixtures": "workspace:*"
     "@affine-test/kit": "workspace:*"
     "@playwright/test": "npm:^1.41.2"
-    express: "npm:^4.18.2"
+    express: "npm:^4.19.2"
     http-proxy-middleware: "npm:^3.0.0-beta.1"
     serve: "npm:^14.2.1"
   languageName: unknown
@@ -72,7 +72,7 @@ __metadata:
     "@affine-test/fixtures": "workspace:*"
     "@affine-test/kit": "workspace:*"
     "@playwright/test": "npm:^1.41.2"
-    express: "npm:^4.18.2"
+    express: "npm:^4.19.2"
     http-proxy-middleware: "npm:^3.0.0-beta.1"
     serve: "npm:^14.2.1"
   languageName: unknown
@@ -147,7 +147,7 @@ __metadata:
     "@affine/electron-api": "workspace:*"
     "@node-rs/argon2": "npm:^1.7.2"
     "@playwright/test": "npm:^1.41.2"
-    express: "npm:^4.18.2"
+    express: "npm:^4.19.2"
     http-proxy-middleware: "npm:^3.0.0-beta.1"
   peerDependencies:
     "@playwright/test": "*"
@@ -175,7 +175,7 @@ __metadata:
     "@magic-works/i18n-codegen": "npm:^0.5.0"
     dotenv: "npm:^16.4.5"
     ts-node: "npm:^10.9.2"
-    vite: "npm:^5.1.4"
+    vite: "npm:^5.0.13"
   peerDependencies:
     ts-node: "*"
   bin:
@@ -277,7 +277,7 @@ __metadata:
     swr: "npm:^2.2.5"
     typescript: "npm:^5.3.3"
     uuid: "npm:^9.0.1"
-    vite: "npm:^5.1.4"
+    vite: "npm:^5.0.13"
     vitest: "npm:1.3.1"
     yjs: "npm:^13.6.12"
   peerDependencies:
@@ -353,7 +353,7 @@ __metadata:
     css-spring: "npm:^4.1.0"
     cssnano: "npm:^6.0.4"
     dayjs: "npm:^1.11.10"
-    express: "npm:^4.18.2"
+    express: "npm:^4.19.2"
     fake-indexeddb: "npm:^5.0.2"
     foxact: "npm:^0.2.31"
     fractional-indexing: "npm:^3.2.0"
@@ -477,7 +477,7 @@ __metadata:
     tinykeys: "patch:tinykeys@npm%3A2.1.0#~/.yarn/patches/tinykeys-npm-2.1.0-819feeaed0.patch"
     tree-kill: "npm:^1.2.2"
     ts-node: "npm:^10.9.2"
-    undici: "npm:^6.6.2"
+    undici: "npm:^6.11.1"
     uuid: "npm:^9.0.1"
     vitest: "npm:1.3.1"
     which: "npm:^4.0.0"
@@ -534,7 +534,7 @@ __metadata:
     react-i18next: "npm:^14.0.5"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.3.3"
-    undici: "npm:^6.6.2"
+    undici: "npm:^6.11.1"
   languageName: unknown
   linkType: soft
 
@@ -590,7 +590,7 @@ __metadata:
     string-width: "npm:^7.1.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.3.3"
-    vite: "npm:^5.1.4"
+    vite: "npm:^5.0.13"
     vite-plugin-istanbul: "npm:^5.0.0"
     vite-plugin-static-copy: "npm:^1.0.1"
     vitest: "npm:1.3.1"
@@ -683,7 +683,7 @@ __metadata:
     cookie-parser: "npm:^1.4.6"
     dotenv: "npm:^16.4.5"
     dotenv-cli: "npm:^7.3.0"
-    express: "npm:^4.18.2"
+    express: "npm:^4.19.2"
     file-type: "npm:^19.0.0"
     get-stream: "npm:^8.0.1"
     graphql: "npm:^16.8.1"
@@ -13272,7 +13272,7 @@ __metadata:
     react: "npm:^18.2.0"
     rxjs: "npm:^7.8.1"
     tinykeys: "patch:tinykeys@npm%3A2.1.0#~/.yarn/patches/tinykeys-npm-2.1.0-819feeaed0.patch"
-    vite: "npm:^5.1.4"
+    vite: "npm:^5.0.13"
     vite-plugin-dts: "npm:3.7.3"
     vitest: "npm:1.3.1"
     yjs: "npm:^13.6.12"
@@ -13317,7 +13317,7 @@ __metadata:
     fake-indexeddb: "npm:^5.0.2"
     idb: "npm:^8.0.0"
     nanoid: "npm:^5.0.6"
-    vite: "npm:^5.1.4"
+    vite: "npm:^5.0.13"
     vite-plugin-dts: "npm:3.7.3"
     vitest: "npm:1.3.1"
     y-indexeddb: "npm:^9.0.12"
@@ -20736,7 +20736,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express@npm:4.18.2, express@npm:^4.17.1, express@npm:^4.17.3, express@npm:^4.18.2":
+"express@npm:4.18.2, express@npm:^4.17.1, express@npm:^4.17.3":
   version: 4.18.2
   resolution: "express@npm:4.18.2"
   dependencies:
@@ -20772,6 +20772,45 @@ __metadata:
     utils-merge: "npm:1.0.1"
     vary: "npm:~1.1.2"
   checksum: 10/869ae89ed6ff4bed7b373079dc58e5dddcf2915a2669b36037ff78c99d675ae930e5fe052b35c24f56557d28a023bb1cbe3e2f2fb87eaab96a1cedd7e597809d
+  languageName: node
+  linkType: hard
+
+"express@npm:^4.19.2":
+  version: 4.19.2
+  resolution: "express@npm:4.19.2"
+  dependencies:
+    accepts: "npm:~1.3.8"
+    array-flatten: "npm:1.1.1"
+    body-parser: "npm:1.20.2"
+    content-disposition: "npm:0.5.4"
+    content-type: "npm:~1.0.4"
+    cookie: "npm:0.6.0"
+    cookie-signature: "npm:1.0.6"
+    debug: "npm:2.6.9"
+    depd: "npm:2.0.0"
+    encodeurl: "npm:~1.0.2"
+    escape-html: "npm:~1.0.3"
+    etag: "npm:~1.8.1"
+    finalhandler: "npm:1.2.0"
+    fresh: "npm:0.5.2"
+    http-errors: "npm:2.0.0"
+    merge-descriptors: "npm:1.0.1"
+    methods: "npm:~1.1.2"
+    on-finished: "npm:2.4.1"
+    parseurl: "npm:~1.3.3"
+    path-to-regexp: "npm:0.1.7"
+    proxy-addr: "npm:~2.0.7"
+    qs: "npm:6.11.0"
+    range-parser: "npm:~1.2.1"
+    safe-buffer: "npm:5.2.1"
+    send: "npm:0.18.0"
+    serve-static: "npm:1.15.0"
+    setprototypeof: "npm:1.2.0"
+    statuses: "npm:2.0.1"
+    type-is: "npm:~1.6.18"
+    utils-merge: "npm:1.0.1"
+    vary: "npm:~1.1.2"
+  checksum: 10/3fcd792536f802c059789ef48db3851b87e78fba103423e524144d79af37da7952a2b8d4e1a007f423329c7377d686d9476ac42e7d9ea413b80345d495e30a3a
   languageName: node
   linkType: hard
 
@@ -21334,12 +21373,12 @@ __metadata:
   linkType: hard
 
 "follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.15.0, follow-redirects@npm:^1.15.4":
-  version: 1.15.5
-  resolution: "follow-redirects@npm:1.15.5"
+  version: 1.15.6
+  resolution: "follow-redirects@npm:1.15.6"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: 10/d467f13c1c6aa734599b8b369cd7a625b20081af358f6204ff515f6f4116eb440de9c4e0c49f10798eeb0df26c95dd05d5e0d9ddc5786ab1a8a8abefe92929b4
+  checksum: 10/70c7612c4cab18e546e36b991bbf8009a1a41cf85354afe04b113d1117569abf760269409cb3eb842d9f7b03d62826687086b081c566ea7b1e6613cf29030bf7
   languageName: node
   linkType: hard
 
@@ -24686,9 +24725,9 @@ __metadata:
   linkType: hard
 
 "jose@npm:^4.11.4, jose@npm:^4.15.1":
-  version: 4.15.4
-  resolution: "jose@npm:4.15.4"
-  checksum: 10/20fa941597150dffc7af3f41d994500cc3e71cd650b755243dbd80d91cf26c1053f95b78af588f05cfc4371e492a67c5c7a48f689b8605145a8fe28b484d725b
+  version: 4.15.5
+  resolution: "jose@npm:4.15.5"
+  checksum: 10/17944fcc0d9afa07387eef23127c30ecfcc77eafddc4b4f1a349a8eee0536bee9b08ecd745406eaa0af65d531f738b94d2467976479cbfe8b3b60f8fc8082b8d
   languageName: node
   linkType: hard
 
@@ -28352,7 +28391,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"on-finished@npm:2.4.1":
+"on-finished@npm:2.4.1, on-finished@npm:^2.4.1":
   version: 2.4.1
   resolution: "on-finished@npm:2.4.1"
   dependencies:
@@ -33896,12 +33935,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^6.6.2":
-  version: 6.6.2
-  resolution: "undici@npm:6.6.2"
-  dependencies:
-    "@fastify/busboy": "npm:^2.0.0"
-  checksum: 10/e08ac9c279d4e4ee1249d30e6e0671f008e156d8ef224bbe3329ef5c5e10197a9e9dbf87c14e44deaffe2802c10bee66c8687d60ff07179b2e18cd5ef454b5c6
+"undici@npm:^6.11.1":
+  version: 6.11.1
+  resolution: "undici@npm:6.11.1"
+  checksum: 10/129480684630e5723b7f4a946c1d9f8120f9b5697cb2032d791d1e3d2898a90eed0ed63c6ef5641502569dca0112759948564354a932c8172fc96845aaf2dd28
   languageName: node
   linkType: hard
 
@@ -35029,12 +35066,13 @@ __metadata:
   linkType: hard
 
 "webpack-dev-middleware@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "webpack-dev-middleware@npm:7.0.0"
+  version: 7.2.1
+  resolution: "webpack-dev-middleware@npm:7.2.1"
   dependencies:
     colorette: "npm:^2.0.10"
     memfs: "npm:^4.6.0"
     mime-types: "npm:^2.1.31"
+    on-finished: "npm:^2.4.1"
     range-parser: "npm:^1.2.1"
     schema-utils: "npm:^4.0.0"
   peerDependencies:
@@ -35042,7 +35080,7 @@ __metadata:
   peerDependenciesMeta:
     webpack:
       optional: true
-  checksum: 10/e94902c35458c2431cd3332088cf33afe9236333e911605e6045392be11f521140600312c698263acf2a6c52e2092b8e8b3ea4b0ed34568df6cb7a79913aa1d3
+  checksum: 10/e1fa9b40cba7b954f901b085cdded62df6f3c10d1d4e24d4850bd35ebe3dcfb18e7159e6579d6ac854e8e3611e5895aaf45ea1f3e29da2287659d36f0cb614d1
   languageName: node
   linkType: hard
 
@@ -35624,7 +35662,7 @@ __metadata:
   resolution: "y-provider@workspace:packages/common/y-provider"
   dependencies:
     "@blocksuite/store": "npm:0.13.0-canary-202403050653-934469c"
-    vite: "npm:^5.1.4"
+    vite: "npm:^5.0.13"
     vite-plugin-dts: "npm:3.7.3"
     vitest: "npm:1.3.1"
     yjs: "npm:^13.6.12"
